@@ -6,7 +6,7 @@ import ServiceAreaMapSection from './MainPage/ServiceAreaSection';
 import ContactSection from './MainPage/ContactSection';
 import Footer from './MainPage/Footer';
 import { FC, useState } from 'react';
-import ImageModal from './Utils/ImageModal';
+import ImageModal from './../Utils/ImageModal';
 
 const MainPage: FC = () => {
     const [modalImage, setModalImage] = useState<{ src: string, alt: string } | null>(null);

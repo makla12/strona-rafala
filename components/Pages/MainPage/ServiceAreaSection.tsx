@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { MapComponent } from "../Utils/Map";
+import { MapComponent } from "../../Utils/Map";
 
 const ServiceAreaMapSection: FC = () => (
     <section id="area" className="py-16 md:py-24 bg-white">

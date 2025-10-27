@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 
 interface PortfolioSectionProps {
@@ -50,9 +51,12 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => (
             </div>
 
             <div className="text-center mt-12">
-                <button className="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-teal-700 transition-colors hover:cursor-pointer">
+                <Link
+                    className="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-teal-700 transition-colors hover:cursor-pointer"
+                    href={"/gallery"}
+                >
                     Zobacz Pełną Galerię
-                </button>
+                </Link>
             </div>
         </div>
     </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FC } from "react";
 
 const HeroSection: FC = () => (
@@ -10,13 +11,13 @@ const HeroSection: FC = () => (
                 Przekształcanie przestrzeni z precyzyjnym rzemiosłem w renowacji i restauracji.
             </p>
             {/* Dodano przycisk "Skontaktuj się" z linkiem do sekcji #contact */}
-            <a
-                href="#contact"
+            <Link
+                href="/#contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-full shadow-xl text-slate-900 bg-teal-400 hover:bg-teal-300 transition-colors duration-300 transform hover:scale-[1.02]"
                 aria-label="Skontaktuj się z nami"
             >
                 Skontaktuj się
-            </a>
+            </Link>
         </div>
     </header>
 );
