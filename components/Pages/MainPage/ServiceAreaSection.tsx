@@ -1,9 +1,9 @@
-import { FC, useRef } from "react";
-import { MapComponent } from "../../Utils/Map";
+import { FC, useMemo, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from '@gsap/react';
+import dynamic from "next/dynamic";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +23,15 @@ const ServiceAreaMapSection: FC = () => {
             }
         });
     },{ scope: container });
-    
+
+    const Map = useMemo(() => dynamic(
+        () => import('@/components/Utils/Map').then(mod => mod.MapComponent),
+        {
+            loading: () => <p>A map is loading</p>,
+            ssr: false
+        }
+    ), [])
+
     return (
         <section ref={container} id="area" className="py-16 md:py-24 bg-white">
             <div className="max-w-7xl mx-auto px-6">
@@ -35,7 +43,7 @@ const ServiceAreaMapSection: FC = () => {
                 {/* Wstawienie nowego dynamicznego komponentu mapy */}
                 <div className="mx-auto max-w-4xl">
                     <div ref={card}>
-                        <MapComponent />
+                        <Map />
                     </div>
                 </div>
 
