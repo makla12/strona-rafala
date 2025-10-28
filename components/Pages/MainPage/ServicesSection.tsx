@@ -1,8 +1,14 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import { Hammer, PaintRoller, Square } from 'lucide-react';
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useGSAP } from "@gsap/react";
 
 import type { Service } from "./ServiceCard";
 import ServiceCard from './ServiceCard';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const SERVICES: Service[] = [
     {
@@ -22,21 +28,43 @@ const SERVICES: Service[] = [
     },
 ];
 
-const ServicesSection: FC = () => (
-    <section id="services" className="py-16 md:py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">Nasza Ekspertyza w Renowacji</h2>
-            <p className="text-center text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
-                Specjalizujemy się w obszarach, które mają największe znaczenie – powierzchniach, które definiują Twoją przestrzeń.
-            </p>
+const ServicesSection: FC = () => {
+    const container = useRef<HTMLElement | null>(null);
 
-            <div className="grid md:grid-cols-3 gap-8">
-                {SERVICES.map((service, index) => (
-                    <ServiceCard key={index} {...service} />
-                ))}
+    useGSAP(()=>{
+        const cards : HTMLElement[] = gsap.utils.toArray(".service");
+        cards.forEach((card) => {
+
+            gsap.from(card, {
+                x: "-50%",
+                opacity: 0,
+                duration: 1.8,
+                ease: "power3.out",
+                scrollTrigger:{
+                    trigger: card,
+                    toggleActions: "restart stop restart stop"
+                }
+            });
+
+        });
+    }, { scope:container });
+
+    return (
+        <section id="services" ref={container} className="py-16 md:py-24 bg-slate-50">
+            <div className="max-w-7xl mx-auto px-6">
+                <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-4">Nasza Ekspertyza w Renowacji</h2>
+                <p className="text-center text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
+                    Specjalizujemy się w obszarach, które mają największe znaczenie – powierzchniach, które definiują Twoją przestrzeń.
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-8 some">
+                    {SERVICES.map((service, index) => (
+                        <ServiceCard key={index} {...service} />
+                    ))}
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 export default ServicesSection;

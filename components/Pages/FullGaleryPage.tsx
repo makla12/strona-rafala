@@ -53,28 +53,26 @@ const GalleryPage: FC = () => {
                     {/* Rozszerzona siatka Galerii */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {GALLERY_IMAGES_DATA.map((caption, index) => (
-                            <div
-                                key={index}
-                                className="group relative overflow-hidden rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-2xl cursor-pointer bg-white"
-                                onClick={() => handleImageClick(
-                                    `https://placehold.co/1200x900/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`,
-                                    `Projekt nr ${index + 1}: ${caption}`
-                                )}
-                            >
-                                {/* Placeholder Image z różnymi proporcjami */}
-                                <Image
-                                    unoptimized
-                                    src={`https://placehold.co/600x450/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`}
-                                    alt={`Projekt nr ${index + 1}: ${caption}`}
-                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
-                                    loading="lazy"
-                                    width={600}
-                                    height={450}
-                                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.onerror = null; e.currentTarget.src = "https://placehold.co/600x450/64748b/f1f5f9?text=Błąd+Obrazu"; }}
-                                />
-                                {/* Overlay z opisem */}
-                                <div className="absolute inset-0 bg-slate-900 bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4">
-                                    <span className="text-white text-lg font-bold text-center border-b-2 border-teal-400 pb-1">{caption}</span>
+                            <div key={index}>
+                                <h1 className="text-center font-semibold text-black">{caption}</h1>
+                                <div
+                                    className="group relative overflow-hidden rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-2xl cursor-pointer bg-white"
+                                    onClick={() => handleImageClick(
+                                        `https://placehold.co/1200x900/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`,
+                                        `Projekt nr ${index + 1}: ${caption}`
+                                    )}
+                                >
+                                    {/* Placeholder Image z różnymi proporcjami */}
+                                    <Image
+                                        unoptimized
+                                        src={`https://placehold.co/600x450/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`}
+                                        alt={`Projekt nr ${index + 1}: ${caption}`}
+                                        className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                                        loading="lazy"
+                                        width={600}
+                                        height={450}
+                                        onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.onerror = null; e.currentTarget.src = "https://placehold.co/600x450/64748b/f1f5f9?text=Błąd+Obrazu"; }}
+                                    />
                                 </div>
                             </div>
                         ))}
