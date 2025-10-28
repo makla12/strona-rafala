@@ -10,13 +10,13 @@ const HeroSection: FC = () => {
 
     const goToContacts = contextSafe(() => {
         gsap.to(window, {
-            duration: 2,
+            duration: 3,
             scrollTo:"#contact"
         });
     });
 
     return (
-        <header className="bg-slate-900 text-white py-64">
+        <header className="bg-slate-900 text-white h-screen md:h-auto md:py-64 flex items-center ">
             <div className="max-w-7xl mx-auto px-6 text-center">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
                     Nieskazitelne Wykończenia Ścian i Podłóg
