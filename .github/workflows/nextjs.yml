@@ -85,7 +85,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      NEXT_PUBLIC_GOOGLE_MAP_API: AIzaSyDuEswBYmLKajhLMX9LJHM3vtMCOi9zaxE 
     runs-on: ubuntu-latest
     needs: build
     steps:
