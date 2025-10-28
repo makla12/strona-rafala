@@ -37,7 +37,7 @@ const GalleryPage: FC = () => {
                 <div className="max-w-7xl mx-auto px-6">
                     {/* Przycisk Powrotu */}
                     <Link
-                        href={"/"}
+                        href={"/#portfolio"}
                         className="mb-8 inline-flex items-center text-teal-600 font-semibold hover:text-teal-800 transition-colors text-lg"
                     >
                         <ArrowLeft size={24} className="mr-2" />
