@@ -50,6 +50,7 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                         "Przestrzeń Komercyjna",
                     ].map((caption, index) => (
                         <div key={index} className="imageCard">
+                            <h1 className="text-center font-semibold">{caption}</h1>
                             <div
                                 className="group relative overflow-hidden rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl cursor-pointer" // Dodano cursor-pointer
                                 // Dodano obsługę kliknięcia
@@ -70,9 +71,6 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                                     height={400}
                                     onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => { e.currentTarget.onerror = null; e.currentTarget.src = "https://placehold.co/600x400/64748b/f1f5f9?text=Błąd+Ładowania+Obrazu"; }}
                                 />
-                                <div className="absolute inset-0 bg-slate-900 bg-opacity-30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span className="text-white text-lg font-semibold border-b-2 border-teal-400 pb-1">{caption}</span>
-                                </div>
                             </div>
                         </div>
                     ))}
