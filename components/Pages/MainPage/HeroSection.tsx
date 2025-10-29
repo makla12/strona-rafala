@@ -16,7 +16,7 @@ const HeroSection: FC = () => {
     });
 
     return (
-        <header className="text-white h-screen md:h-auto md:py-64 relative flex justify-center" style={{ backgroundImage: "url(/Kasia2.jpg)", backgroundPosition: "center center", backgroundSize: "cover" }}>
+        <header className="text-white h-screen md:h-auto md:py-64 relative flex justify-center" style={{ backgroundImage: "url(Kasia2.jpg)", backgroundPosition: "center center", backgroundSize: "cover" }}>
             <div className="opacity-75 bg-slate-900 w-full h-full top-0 absolute"></div>
             <div className="z-10 flex items-center">
                 <div className="max-w-7xl mx-auto px-6 text-center">
