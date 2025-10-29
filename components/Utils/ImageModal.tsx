@@ -1,9 +1,9 @@
 import { X } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC, useEffect } from "react";
 
 interface ImageModalProps {
-    src: string;
+    src: string | StaticImageData;
     alt: string;
     onClose: () => void;
 }

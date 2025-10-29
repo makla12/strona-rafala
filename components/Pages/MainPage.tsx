@@ -7,11 +7,12 @@ import ContactSection from './MainPage/ContactSection';
 import Footer from './MainPage/Footer';
 import { FC, useState } from 'react';
 import ImageModal from './../Utils/ImageModal';
+import { StaticImageData } from 'next/image';
 
 const MainPage: FC = () => {
-    const [modalImage, setModalImage] = useState<{ src: string, alt: string } | null>(null);
+    const [modalImage, setModalImage] = useState<{ src: string | StaticImageData, alt: string } | null>(null);
 
-    const handleImageClick = (src: string, alt: string) => {
+    const handleImageClick = (src: string | StaticImageData, alt: string) => {
         setModalImage({ src, alt });
     };
 
