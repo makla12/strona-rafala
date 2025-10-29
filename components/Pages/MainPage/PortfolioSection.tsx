@@ -1,21 +1,23 @@
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import gsap from "gsap";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FC, useRef } from "react";
+import kasia1 from "@/public/Kasia1.jpg";
+import kasia2 from "@/public/Kasia2.jpg"
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface PortfolioSectionProps {
-    onImageClick: (src: string, alt: string) => void;
+    onImageClick: (src: string | StaticImageData, alt: string) => void;
 }
 
 const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
     const container = useRef<HTMLElement | null>(null);
 
-    useGSAP(()=>{
-        const cards : HTMLElement[] = gsap.utils.toArray(".imageCard");
+    useGSAP(() => {
+        const cards: HTMLElement[] = gsap.utils.toArray(".imageCard");
         cards.forEach((card) => {
 
             gsap.from(card, {
@@ -23,14 +25,14 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                 opacity: 0,
                 duration: 1.8,
                 ease: "power3.out",
-                scrollTrigger:{
+                scrollTrigger: {
                     trigger: card,
                     toggleActions: "restart pause restart pause"
                 }
             });
 
         });
-    }, { scope:container });
+    }, { scope: container });
 
 
     return (
@@ -44,27 +46,27 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                 {/* Mock Gallery/Image Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
-                        "Renowacja Podłóg Drewnianych",
-                        "Płytki Łazienkowe",
-                        "Ściana w Salonie",
-                        "Przestrzeń Komercyjna",
-                    ].map((caption, index) => (
+                        { caption: "Renowacja Podłóg Drewnianych", img: kasia1 },
+                        { caption: "Płytki Łazienkowe", img: kasia2 },
+                        { caption: "Ściana w Salonie", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+                        { caption: "Przestrzeń Komercyjna", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+                    ].map((value, index) => (
                         <div key={index} className="imageCard">
-                            <h1 className="text-center font-semibold">{caption}</h1>
+                            <h1 className="text-center font-semibold">{value.caption}</h1>
                             <div
                                 className="group relative overflow-hidden rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl cursor-pointer" // Dodano cursor-pointer
                                 // Dodano obsługę kliknięcia
                                 onClick={() => onImageClick(
                                     // Używamy większego rozmiaru placeholder dla podglądu pełnoekranowego
-                                    `https://placehold.co/800x600/334155/e2e8f0?text=${caption.replace(/\s/g, '+')}`,
-                                    `Przykład pracy: ${caption}`
+                                    value.img,
+                                    `Przykład pracy: ${value.caption}`
                                 )}
                             >
                                 {/* Placeholder Image */}
                                 <Image
                                     unoptimized
-                                    src={`https://placehold.co/600x400/334155/e2e8f0?text=${caption.replace(/\s/g, '+')}`}
-                                    alt={`Przykład pracy: ${caption}`}
+                                    src={value.img}
+                                    alt={`Przykład pracy: ${value.caption}`}
                                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                                     loading="lazy"
                                     width={600}

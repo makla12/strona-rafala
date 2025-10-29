@@ -1,29 +1,31 @@
 import { ArrowLeft } from "lucide-react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { FC, useState } from "react";
 import Footer from "./MainPage/Footer";
 import ImageModal from "../Utils/ImageModal";
 import Link from "next/link";
+import kasia1 from "@/public/Kasia1.jpg";
+import kasia2 from "@/public/Kasia2.jpg";
 
 const GALLERY_IMAGES_DATA = [
-    "Kuchnia - montaż płytek",
-    "Łazienka - renowacja podłogi",
-    "Salon - malowanie dekoracyjne",
-    "Sypialnia - tynkowanie",
-    "Korytarz - układanie drewna",
-    "Garaż - podłoga epoksydowa",
-    "Prace wykończeniowe - detale",
-    "Projekt komercyjny - biuro",
-    "Renowacja starej kamienicy",
-    "Bejcowanie parkietu",
-    "Montaż listew przypodłogowych",
-    "Płytki tarasowe",
+    { caption: "Kuchnia - montaż płytek", img: kasia1 },
+    { caption: "Łazienka - renowacja podłogi", img: kasia2 },
+    { caption: "Salon - malowanie dekoracyjne", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Sypialnia - tynkowanie", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Korytarz - układanie drewna", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Garaż - podłoga epoksydowa", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Prace wykończeniowe - detale", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Projekt komercyjny - biuro", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Renowacja starej kamienicy", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Bejcowanie parkietu", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Montaż listew przypodłogowych", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Płytki tarasowe", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
 ];
 
 const GalleryPage: FC = () => {
-    const [modalImage, setModalImage] = useState<{ src: string, alt: string } | null>(null);
+    const [modalImage, setModalImage] = useState<{ src: string | StaticImageData, alt: string } | null>(null);
 
-    const handleImageClick = (src: string, alt: string) => {
+    const handleImageClick = (src: string | StaticImageData, alt: string) => {
         setModalImage({ src, alt });
     };
 
@@ -52,21 +54,21 @@ const GalleryPage: FC = () => {
 
                     {/* Rozszerzona siatka Galerii */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {GALLERY_IMAGES_DATA.map((caption, index) => (
+                        {GALLERY_IMAGES_DATA.map((value, index) => (
                             <div key={index}>
-                                <h1 className="text-center font-semibold text-black">{caption}</h1>
+                                <h1 className="text-center font-semibold text-black">{value.caption}</h1>
                                 <div
                                     className="group relative overflow-hidden rounded-xl shadow-lg transition-shadow duration-300 hover:shadow-2xl cursor-pointer bg-white"
                                     onClick={() => handleImageClick(
-                                        `https://placehold.co/1200x900/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`,
-                                        `Projekt nr ${index + 1}: ${caption}`
+                                        value.img,
+                                        `Projekt nr ${index + 1}: ${value.caption}`
                                     )}
                                 >
                                     {/* Placeholder Image z różnymi proporcjami */}
                                     <Image
                                         unoptimized
-                                        src={`https://placehold.co/600x450/1e293b/f1f5f9?text=${caption.replace(/\s/g, '+')}`}
-                                        alt={`Projekt nr ${index + 1}: ${caption}`}
+                                        src={value.img}
+                                        alt={`Projekt nr ${index + 1}: ${value.caption}`}
                                         className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy"
                                         width={600}
