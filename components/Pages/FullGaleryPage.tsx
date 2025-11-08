@@ -6,12 +6,14 @@ import ImageModal from "../Utils/ImageModal";
 import Link from "next/link";
 import kasia1 from "@/public/Kasia1.jpg";
 import kasia2 from "@/public/Kasia2.jpg";
+import stjuk1 from "@/public/Stjuk1.jpg";
+import stjuk2 from "@/public/Stjuk2.jpg";
 
 const GALLERY_IMAGES_DATA = [
     { caption: "Kuchnia - montaż płytek", img: kasia1 },
     { caption: "Łazienka - renowacja podłogi", img: kasia2 },
-    { caption: "Salon - malowanie dekoracyjne", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Sypialnia - tynkowanie", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Salon - malowanie dekoracyjne", img: stjuk1},
+    { caption: "Sypialnia - tynkowanie", img: stjuk2},
     { caption: "Korytarz - układanie drewna", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
     { caption: "Garaż - podłoga epoksydowa", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
     { caption: "Prace wykończeniowe - detale", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
