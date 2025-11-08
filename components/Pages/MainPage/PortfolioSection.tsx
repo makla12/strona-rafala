@@ -5,7 +5,9 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FC, useRef } from "react";
 import kasia1 from "@/public/Kasia1.jpg";
-import kasia2 from "@/public/Kasia2.jpg"
+import kasia2 from "@/public/Kasia2.jpg";
+import stjuk1 from "@/public/Stjuk1.jpg";
+import stjuk2 from "@/public/Stjuk2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,8 +50,8 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                     {[
                         { caption: "Renowacja Podłóg Drewnianych", img: kasia1 },
                         { caption: "Płytki Łazienkowe", img: kasia2 },
-                        { caption: "Ściana w Salonie", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-                        { caption: "Przestrzeń Komercyjna", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+                        { caption: "Ściana w Salonie", img: stjuk1},
+                        { caption: "Przestrzeń Komercyjna", img: stjuk2},
                     ].map((value, index) => (
                         <div key={index} className="imageCard">
                             <h1 className="text-center font-semibold">{value.caption}</h1>
@@ -78,12 +80,19 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                     ))}
                 </div>
 
-                <div className="text-center mt-12">
+                <div className="text-center mt-12 flex gap-6 justify-center flex-col sm:flex-row">
                     <Link
                         className="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-teal-700 transition-colors hover:cursor-pointer"
                         href={"/gallery"}
                     >
-                        Zobacz Pełną Galerię
+                        Zobacz Galerię Remontową
+                    </Link>
+
+                    <Link
+                        className="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-teal-700 transition-colors hover:cursor-pointer"
+                        href={"/gallery"}
+                    >
+                        Zobacz Galerię Dekoracji Ściennych
                     </Link>
                 </div>
             </div>
