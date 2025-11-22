@@ -24,7 +24,7 @@ const AboutMeSection: FC = () => {
     },{ scope: container });
 
     return (
-        <section id="about" className="py-16 md:py-24 bg-slate-50">
+        <section ref={container} id="about" className="py-16 md:py-24 bg-slate-50">
             <div className="max-w-4xl mx-auto px-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-center text-slate-800 mb-12">
                     O Mnie i mojej pracy
