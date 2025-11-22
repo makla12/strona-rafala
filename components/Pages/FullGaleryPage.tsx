@@ -4,24 +4,48 @@ import { FC, useState } from "react";
 import Footer from "./MainPage/Footer";
 import ImageModal from "../Utils/ImageModal";
 import Link from "next/link";
-import kasia1 from "@/public/Kasia1.jpg";
-import kasia2 from "@/public/Kasia2.jpg";
-import stjuk1 from "@/public/Stjuk1.jpg";
-import stjuk2 from "@/public/Stjuk2.jpg";
+import deco1 from "@/public/Deco1.jpg";
+import deco2 from "@/public/Deco2.jpg";
+import deco3 from "@/public/Deco3.jpg";
+import deco4 from "@/public/Deco4.jpg";
+import deco5 from "@/public/Deco5.jpg";
+import deco6 from "@/public/Deco6.jpg";
+import deco7 from "@/public/Deco7.jpg";
+import deco8 from "@/public/Deco8.jpg";
+import deco9 from "@/public/Deco9.jpg";
+import deco10 from "@/public/Deco10.jpg";
+import deco11 from "@/public/Deco11.jpg";
+import deco12 from "@/public/Deco12.jpg";
+import deco13 from "@/public/Deco13.jpg";
+import deco14 from "@/public/Deco14.jpg";
+import deco15 from "@/public/Deco15.jpg";
+import deco16 from "@/public/Deco16.jpg";
+import deco17 from "@/public/Deco17.jpg";
+import deco18 from "@/public/Deco18.jpg";
+import deco19 from "@/public/Deco19.jpg";
+import deco20 from "@/public/Deco20.jpg";
 
 const GALLERY_IMAGES_DATA = [
-    { caption: "Kuchnia - montaż płytek", img: kasia1 },
-    { caption: "Łazienka - renowacja podłogi", img: kasia2 },
-    { caption: "Salon - malowanie dekoracyjne", img: stjuk1},
-    { caption: "Sypialnia - tynkowanie", img: stjuk2},
-    { caption: "Korytarz - układanie drewna", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Garaż - podłoga epoksydowa", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Prace wykończeniowe - detale", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Projekt komercyjny - biuro", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Renowacja starej kamienicy", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Bejcowanie parkietu", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Montaż listew przypodłogowych", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
-    { caption: "Płytki tarasowe", img: "https://placehold.co/800x600/334155/e2e8f0?text=some" },
+    { caption: "Kuchnia - montaż płytek", img: deco1 },
+    { caption: "Łazienka - renowacja podłogi", img: deco2 },
+    { caption: "Salon - malowanie dekoracyjne", img: deco3 },
+    { caption: "Sypialnia - tynkowanie", img: deco4 },
+    { caption: "Placeholder text", img: deco5 },
+    { caption: "Placeholder text", img: deco6 },
+    { caption: "Placeholder text", img: deco7 },
+    { caption: "Placeholder text", img: deco8 },
+    { caption: "Placeholder text", img: deco9 },
+    { caption: "Placeholder text", img: deco10 },
+    { caption: "Placeholder text", img: deco11 },
+    { caption: "Placeholder text", img: deco12 },
+    { caption: "Placeholder text", img: deco13 },
+    { caption: "Placeholder text", img: deco14 },
+    { caption: "Placeholder text", img: deco15 },
+    { caption: "Placeholder text", img: deco16 },
+    { caption: "Placeholder text", img: deco17 },
+    { caption: "Placeholder text", img: deco18 },
+    { caption: "Placeholder text", img: deco19 },
+    { caption: "Placeholder text", img: deco20 },
 ];
 
 const GalleryPage: FC = () => {

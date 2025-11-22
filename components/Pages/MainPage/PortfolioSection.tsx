@@ -4,10 +4,10 @@ import gsap from "gsap";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { FC, useRef } from "react";
-import kasia1 from "@/public/Kasia1.jpg";
-import kasia2 from "@/public/Kasia2.jpg";
-import stjuk1 from "@/public/Stjuk1.jpg";
-import stjuk2 from "@/public/Stjuk2.jpg";
+import deco1 from "@/public/Deco1.jpg";
+import deco2 from "@/public/Deco2.jpg";
+import deco3 from "@/public/Deco3.jpg";
+import deco4 from "@/public/Deco4.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,10 +48,10 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                 {/* Mock Gallery/Image Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
-                        { caption: "Renowacja Podłóg Drewnianych", img: kasia1 },
-                        { caption: "Płytki Łazienkowe", img: kasia2 },
-                        { caption: "Ściana w Salonie", img: stjuk1},
-                        { caption: "Przestrzeń Komercyjna", img: stjuk2},
+                        { caption: "Renowacja Podłóg Drewnianych", img: deco1 },
+                        { caption: "Płytki Łazienkowe", img: deco2 },
+                        { caption: "Ściana w Salonie", img: deco3 },
+                        { caption: "Przestrzeń Komercyjna", img: deco4 },
                     ].map((value, index) => (
                         <div key={index} className="imageCard">
                             <h1 className="text-center font-semibold">{value.caption}</h1>
