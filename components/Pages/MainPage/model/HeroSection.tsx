@@ -21,7 +21,7 @@ const HeroSection: FC = () => {
             <div className="z-10 flex items-center">
                 <div className="max-w-7xl mx-auto px-6 text-center">
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                        Nieskazitelne Wykończenia Ścian i Podłóg
+                        Ekskluzywne Wykończenia Ścian i Podłóg
                     </h1>
                     <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-3xl mx-auto">
                         Przekształcanie przestrzeni z precyzyjnym rzemiosłem w renowacji i restauracji.

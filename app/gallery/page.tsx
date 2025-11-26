@@ -1,3 +1,3 @@
 "use client"
-import GalleryPage from "@/components/Pages/FullGaleryPage";
-export default GalleryPage;
+import RemontGallery from "@/components/Pages/Gallery/RemontGalleryPage"
+export default RemontGallery;

@@ -18,21 +18,28 @@ const ImageModal: FC<ImageModalProps> = ({ src, alt, onClose }) => {
         };
     }, []);
 
-    // Zamknięcie modala po naciśnięciu klawisza ESC
     useEffect(() => {
+        const handlePopState = () => {
+            onClose();
+        }
+
         const handleKeydown = (event: KeyboardEvent) => {
             if (event.key === 'Escape') {
                 onClose();
             }
         };
+        window.addEventListener('popstate', handlePopState);
         window.addEventListener('keydown', handleKeydown);
-        return () => window.removeEventListener('keydown', handleKeydown);
+        return () => {
+            window.removeEventListener('keydown', handleKeydown);
+            window.removeEventListener('popstate', handlePopState);
+        }
     }, [onClose]);
 
     return (
         <div
             className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4"
-            onClick={onClose} // Zamknięcie po kliknięciu poza obrazem
+            // onClick={onClose} // Zamknięcie po kliknięciu poza obrazem
         >
             <div
                 className="relative max-w-5xl max-h-full"

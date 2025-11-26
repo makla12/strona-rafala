@@ -49,10 +49,10 @@ const AboutMeSection: FC = () => {
                                 Rafał Filipiak - Twój Wykonawca
                             </h3>
                             <p className="text-slate-700 text-lg mb-4">
-                                Nazywam się Rafał i jestem jedyną osobą odpowiedzialną za każdy projekt w tej firmie. Choć działalność dopiero się rozpoczyna, wniosłem ze sobą **wieloletnie doświadczenie** w precyzyjnej renowacji wnętrz, ze szczególnym uwzględnieniem podłóg i ścian.
+                                Nazywam się Rafał i jestem jedyną osobą odpowiedzialną za każdy projekt w tej firmie. Choć strona internetowa dopiero powstała, wnoszę ze sobą wieloletnie doświadczenie w precyzyjnej renowacji wnętrz, ze szczególnym uwzględnieniem ścian i podłóg.
                             </p>
                             <p className="text-slate-700 text-lg">
-                                Wierzę, że pracując samodzielnie, mogę zagwarantować najwyższą jakość, dbałość o detale i stałą, jasną komunikację. Wybierając mnie, wybierasz rzemieślnika, który osobiście zajmie się Twoimi ścianami i podłogami od początku do końca, bez ukrytych podwykonawców.
+                                Wierzę, że pracując samodzielnie, mogę zagwarantować najwyższą jakość, dbałość o detale i stałą, jasną komunikację. Wybierając mnie, wybierasz rzemieślnika, który osobiście zajmie się Twoim wystrojem wnetrz od początku do końca, bez ukrytych podwykonawców.
                             </p>
                         </div>
                     </div>
