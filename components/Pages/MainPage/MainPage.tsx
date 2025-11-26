@@ -1,12 +1,12 @@
-import HeroSection from './MainPage/HeroSection';
-import AboutMeSection from './MainPage/AboutMeSection';
-import ServicesSection from './MainPage/ServicesSection';
-import PortfolioSection from './MainPage/PortfolioSection';
-import ServiceAreaMapSection from './MainPage/ServiceAreaSection';
-import ContactSection from './MainPage/ContactSection';
-import Footer from './MainPage/Footer';
+import HeroSection from './model/HeroSection';
+import AboutMeSection from './model/AboutMeSection';
+import ServicesSection from './model/ServicesSection';
+import PortfolioSection from './model/PortfolioSection';
+import ServiceAreaMapSection from './model/ServiceAreaSection';
+import ContactSection from './model/ContactSection';
+import Footer from './model/Footer';
 import { FC, useState } from 'react';
-import ImageModal from './../Utils/ImageModal';
+import ImageModal from '../../Utils/ImageModal';
 import { StaticImageData } from 'next/image';
 
 const MainPage: FC = () => {
@@ -14,10 +14,14 @@ const MainPage: FC = () => {
 
     const handleImageClick = (src: string | StaticImageData, alt: string) => {
         setModalImage({ src, alt });
+        history.pushState({ modalOpen: true }, '', '#fullscreen-image');
     };
 
     const handleCloseModal = () => {
         setModalImage(null);
+        if (history.state?.modalOpen) {
+            history.back();
+        }
     };
 
     return (

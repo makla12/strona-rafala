@@ -6,8 +6,8 @@ import Link from "next/link";
 import { FC, useRef } from "react";
 import deco1 from "@/public/Deco1.jpg";
 import deco2 from "@/public/Deco2.jpg";
-import deco3 from "@/public/Deco3.jpg";
-import deco4 from "@/public/Deco4.jpg";
+import deco14 from "@/public/Deco14.jpg";
+import deco15 from "@/public/Deco15.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,27 +48,26 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
                 {/* Mock Gallery/Image Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     {[
-                        { caption: "Renowacja Podłóg Drewnianych", img: deco1 },
-                        { caption: "Płytki Łazienkowe", img: deco2 },
-                        { caption: "Ściana w Salonie", img: deco3 },
-                        { caption: "Przestrzeń Komercyjna", img: deco4 },
+                        { img: deco1 },
+                        { img: deco2 },
+                        { img: deco14 },
+                        { img: deco15 },
                     ].map((value, index) => (
                         <div key={index} className="imageCard">
-                            <h1 className="text-center font-semibold">{value.caption}</h1>
                             <div
                                 className="group relative overflow-hidden rounded-xl shadow-md transition-shadow duration-300 hover:shadow-xl cursor-pointer" // Dodano cursor-pointer
                                 // Dodano obsługę kliknięcia
                                 onClick={() => onImageClick(
                                     // Używamy większego rozmiaru placeholder dla podglądu pełnoekranowego
                                     value.img,
-                                    `Przykład pracy: ${value.caption}`
+                                    ``
                                 )}
                             >
                                 {/* Placeholder Image */}
                                 <Image
                                     unoptimized
                                     src={value.img}
-                                    alt={`Przykład pracy: ${value.caption}`}
+                                    alt={`Przykład pracy`}
                                     className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
                                     loading="lazy"
                                     width={600}
@@ -90,7 +89,7 @@ const PortfolioSection: FC<PortfolioSectionProps> = ({ onImageClick }) => {
 
                     <Link
                         className="bg-teal-600 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-teal-700 transition-colors hover:cursor-pointer"
-                        href={"/gallery"}
+                        href={"/gallery_deco"}
                     >
                         Zobacz Galerię Dekoracji Ściennych
                     </Link>

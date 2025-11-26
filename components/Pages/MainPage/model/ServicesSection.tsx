@@ -1,5 +1,5 @@
 import { FC, useRef } from "react";
-import { Hammer, PaintRoller, Square } from 'lucide-react';
+import { Hammer, PaintRoller, Sparkles, } from 'lucide-react';
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -17,9 +17,9 @@ const SERVICES: Service[] = [
         description: "Profesjonalne naprawy, tynkowanie, teksturowanie i malowanie na zamówienie, aby nadać Twoim ścianom nieskazitelne, nowoczesne wykończenie. Zajmujemy się wszystkim, od drobnych pęknięć po całkowite remonty powierzchni."
     },
     {
-        icon: Square,
-        title: "Renowacja Podłóg Drewnianych",
-        description: "Przywracanie życia starym drewnianym podłogom poprzez profesjonalne szlifowanie, bejcowanie i lakierowanie. Usuwamy zarysowania i zużycie, chroniąc Twoją inwestycję na lata."
+        icon: Sparkles,
+        title: "Dekoracje Ścienne, Które Mówią Same za Siebie",
+        description: "Masz dość nudnych, jednolitych ścian? Pragniesz, by Twoje wnętrza zyskały niepowtarzalny charakter, luksusowy sznyt lub surową, nowoczesną elegancję?"
     },
     {
         icon: Hammer,
